@@ -1,0 +1,60 @@
+?? Обновлённый план проекта (продакшен-ориентированный + async)
+1. FastAPI + SQLAlchemy async + aiosqlite
+Основной API, полностью асинхронный.
+
+2. Telegram-бот (aiogram 3.x)
+Асинхронный, общается с API через httpx.
+
+3. Очередь задач
+Celery 5 + Redis
+Celery остаётся синхронным (worker — sync).
+
+FastAPI остаётся async.
+
+Бот остаётся async.
+
+Мы аккуратно свяжем их через API и брокер.
+
+4. Асинхронные напоминания
+Celery будет планировать задачи.
+
+Бот будет отправлять уведомления пользователям.
+
+API будет хранить расписание.
+
+Redis — брокер + бэкенд результатов.
+
+5. Тестирование
+pytest
+
+pytest-asyncio
+
+factory_boy
+
+coverage
+
+линтеры: ruff + mypy
+
+6. Инфраструктура
+Docker Compose:
+
+api
+
+bot
+
+redis
+
+celery worker
+
+celery beat
+
+SQLite в volume
+
+Возможность легко перейти на PostgreSQL
+
+7. Документация
+Swagger (FastAPI даёт автоматически)
+
+README.md
+
+Структура проекта понятная и поддерживаемая

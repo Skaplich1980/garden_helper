@@ -1,0 +1,7 @@
+garden_helper
+
+ username for your bot
+garden_helper_kaplich_bot
+
+token
+8855939061:AAFrNipqL7qMctlH4t2Sf5WpM6h-Z5v8sEU
